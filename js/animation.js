@@ -12,6 +12,7 @@
         const divsvg = document.getElementById("svg-animation");
         const divsvg2 = document.getElementById("svg-animation-2");
         const svg1 = document.getElementById("img-animation-1");
+        const body = document.getElementById("body");
 
         divsvg.classList.add("open-svg-animation");
         divsvg.classList.add("fade-in");
@@ -28,6 +29,7 @@
             setTimeout(function() {
                 divsvg2.style.display = "block";
                 divsvg2.classList.add("svg-animation-2-animation");
+                body.classList.remove("overflow-body")
             }, 2300);
 
         }, 1500);

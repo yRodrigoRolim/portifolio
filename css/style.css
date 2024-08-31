@@ -3,13 +3,136 @@
     padding: 0px;
     border: none;
     box-sizing: border-box;
+    outline: none;
 }
 html,body{
     scroll-behavior: smooth;
 }
 :root{
-    --off-white: "#fafafd";
+    --var-off-white: #fafafd;
+    --var-light-gray-details : #eeeeff;
+    --var-off-black: #16262E;
     --var-purple: #A480F2;
+    --var-purple-details: #BDA3F5;
     --font-pompierre: "Pompiere"
 }
+.background-light{
+  background-color: var(--var-off-white);
+  transition: 0.5s linear;
+}
+.background-dark{
+  background-color: var(--var-off-black);
+  transition: 0.5s linear;
+}
+.text-light{
+  color: var(--var-off-white);
+  transition: 0.5s linear;
+}
+.text-dark{
+  color: var(--var-off-black);
+  transition: 0.5s linear;
+}
+.overflow-body{
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+.togglemode{
+    position: absolute;
+    top: 30px;
+    right: 30px;
+}
+.menu{
+    position: absolute;
+    top: 30px;
+    left: 30px;
+}
+ 
+.togglemode button, .menu button{
+    border-radius: 0.5rem;
+    color: var(--var-off-white);
+    padding: 10px 20px;
+    background-color: var(--var-purple);
+    font-family: var(--font-pompierre), sans-serif;
+    cursor: pointer;
+}
+.arrow-down{
+    width: 50px;
+    height: 50px;
+    background-color: var(--var-purple-details);
+    border-radius: 50%;
+    margin: 0 auto;
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s linear;
+    cursor: pointer;
+}
+.arrow-down i{
+    color: var(--var-off-white);
+}
+.arrow-down:hover{
+    transition: 0.5s linear;
+    background-color: var(--var-purple);
+}
+
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
   
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    border: 0px;
+    outline: none;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--var-light-gray-details);
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: var(--var-purple);
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: var(--var-purple);
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+    background-color: #fff;
+  }
+  
+  .slider.round {
+    border-radius: 2rem;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }

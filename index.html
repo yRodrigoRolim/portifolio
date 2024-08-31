@@ -5,15 +5,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portifólio - Rodrigo Rolim</title>
+    <link rel="shortcut icon" href="img/primeiro-svg.svg" type="image/x-icon">
+    <!-- Styles -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/animation.css">
+    <!-- Google font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pompiere&display=swap" rel="stylesheet">
+
+    <!-- Bibliotecas -->
+    <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" onload="this.rel='stylesheet'">
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
 </head>
 
-<body>
-<div class="background-animation">
+<body id="body" class="overflow-body trade-mode-background background-light">
+<div class="togglemode">
+    <label class="switch">
+        <input type="checkbox" id="togglemode">
+        <span class="slider round"></span>
+      </label>
+</div>
+<div class="menu">
+    <button id="menu" onclick="menu()"><i class="fa-solid fa-bars"></i></button>
+</div>
+<div class="background-animation trade-mode-background background-light">
     <div class="animation-div" id="animation-div">
 
         <div class="svg-animation" id="svg-animation">
@@ -21,13 +38,22 @@
         </div>
 
         <div class="svg-animation-2" id="svg-animation-2">
-            <h1>PORTIFÓLIO <br>DESENVOLVEDOR WEB</h1>
+            <h1 class="trade-mode-text text-dark">PORTIFÓLIO <br>DESENVOLVEDOR WEB</h1>
             <img src="img/segundo-svg.svg" alt="Segunda Animação com svg" id="img-animation-1">
+            <div class="arrow-down" id="scrolldown">
+                <i class="fa-solid fa-arrow-down"></i>
+            </div>
         </div>
     </div>
 </div>
 
 <script src="js/animation.js"></script>
+<script src="js/togglemode.js"></script>
 </body> 
 
 </html>
+
+<!-- background-white trade background color-->
+<!-- background-black trade background color -->
+<!-- color-white trade color -->
+<!-- color-black trade color -->
