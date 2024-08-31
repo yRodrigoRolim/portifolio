@@ -1,37 +1,34 @@
 const checkbox = document.getElementById('togglemode');
-        let mode = "light"; // Variável persistente para o modo
 
-        // Adiciona um listener para o evento 'change'
-        checkbox.addEventListener('change', function () {
-            togglemode();
-        });
+let mode = localStorage.getItem('mode') === 'true';
 
-        function togglemode() {
-            const animationBackground = document.querySelectorAll(".trade-mode-background");
-            const animationText = document.querySelectorAll(".trade-mode-text");
+document.addEventListener('DOMContentLoaded', function() {
+    if (mode) {
+        checkbox.checked = true; 
+        console.log("its a true");
+    }
+    togglemode();
+});
 
-            // Background
-            animationBackground.forEach(function (div) {
-                if (mode === "light") {
-                    div.classList.remove("background-light");
-                    div.classList.add("background-dark");
-                } else if (mode === "dark") {
-                    div.classList.remove("background-dark");
-                    div.classList.add("background-light");
-                }
-            });
-            // Color
-            animationText.forEach(function (div) {
-                if (mode === "light") {
-                    div.classList.remove("text-dark");
-                    div.classList.add("text-light");
-                } else if (mode === "dark") {
-                    div.classList.remove("text-light");
-                    div.classList.add("text-dark");
-                }
-            });
-            
-            // Alterna o modo
-            mode = (mode === "light") ? "dark" : "light";
-            console.log(`Switched to ${mode} mode`);
-        }
+checkbox.addEventListener('change', function () {
+    togglemode();
+});
+
+function togglemode() {
+    const animationBackground = document.querySelectorAll(".trade-mode-background");
+    const animationText = document.querySelectorAll(".trade-mode-text");
+
+    // background
+    animationBackground.forEach(function (div) {
+        div.classList.toggle("background-light", !checkbox.checked);
+        div.classList.toggle("background-dark", checkbox.checked);
+    });
+
+    animationText.forEach(function (div) {
+        div.classList.toggle("text-dark", !checkbox.checked);
+        div.classList.toggle("text-light", checkbox.checked);
+    });
+
+    // color
+    localStorage.setItem('mode', checkbox.checked);
+}
