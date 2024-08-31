@@ -1,18 +1,4 @@
-<div class="background-animation">
-    <div class="animation-div" id="animation-div">
 
-        <div class="svg-animation" id="svg-animation">
-            <img src="img/primeiro-svg.svg" alt="Animação com svg" id="img-animation-1">
-        </div>
-
-        <div class="svg-animation-2" id="svg-animation-2">
-            <h1>Meu portifólio web</h1>
-            <img src="img/segundo-svg.svg" alt="Segunda Animação com svg" id="img-animation-1">
-        </div>
-    </div>
-</div>
-
-<script>
     document.addEventListener('DOMContentLoaded', function() {
         // Chama sua função aqui
         setTimeout(function() {
@@ -47,4 +33,3 @@
         }, 1500);
         
     }
-</script>
