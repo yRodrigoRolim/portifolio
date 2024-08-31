@@ -4,6 +4,9 @@
     border: none;
     box-sizing: border-box;
 }
+html,body{
+    scroll-behavior: smooth;
+}
 :root{
     --off-white: "#fafafd";
     --var-purple: #A480F2;
