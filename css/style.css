@@ -1,0 +1,12 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    box-sizing: border-box;
+}
+:root{
+    --off-white: "#fafafd";
+    --var-purple: #A480F2;
+    --font-pompierre: "Pompiere"
+}
+  
