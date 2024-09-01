@@ -10,8 +10,9 @@ html,body{
 }
 :root{
     --var-off-white: #fafafd;
-    --var-light-gray-details : #eeeeff;
+    --var-light-gray-details : #fff;
     --var-off-black: #16262E;
+    --var-off-black-details: #213945;
     --var-purple: #A480F2;
     --var-purple-details: #BDA3F5;
     --font-pompierre: "Pompiere"
@@ -31,6 +32,12 @@ html,body{
 .text-dark{
   color: var(--var-off-black);
   transition: 0.5s linear;
+}
+.bg-details-light{
+    background-color: var(--var-light-gray-details);
+}
+.bg-details-dark{
+    background-color: var(--var-purple);
 }
 .overflow-body{
     overflow-x: hidden;
@@ -76,3 +83,43 @@ html,body{
     background-color: var(--var-purple);
 }
 
+.container-my-img{
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 2s0px;
+    display: flex;
+    flex-direction: column;
+}
+.container-my-img .img-me{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.container-my-img img{
+    margin: 0 auto;
+    width: 300px;
+    height: 300px;
+    animation: 3s bobs infinite linear;
+}
+.container-my-img span{
+    height: 40px;
+    margin-top: 20px;
+    box-shadow: 0px 3px 8px #43434323;
+}
+@keyframes bobs {
+    0%,100%{
+        border-radius: 72% 28% 71% 29% / 37% 65% 35% 63% ;
+        box-shadow: 3px 3px 3px var(--var-purple);
+    }
+    35%{
+        border-radius: 50% 50% 39% 61% / 62% 40% 60% 38%;
+        box-shadow: -3px -3px 10px var(--var-purple);
+    }
+    65%{
+        transform: scale(1.05);
+        border-radius: 58% 42% 42% 58% / 67% 40% 60% 33%;
+        box-shadow: -3px 3px 10px var(--var-purple);
+    }
+}
